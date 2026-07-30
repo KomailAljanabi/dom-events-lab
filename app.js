@@ -20,7 +20,7 @@ equals.addEventListener('click', equalClick)
 
 numbers.forEach(
     function (numSelected) {
-        num.addEventListener('click',
+        numSelected.addEventListener('click',
             function (numEvent) {
                 if (display.textContent === '+' || display.textContent === '-' ||
                     display.textContent === '*' || display.textContent === '/' ||
