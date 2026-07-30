@@ -30,6 +30,7 @@ numbers.forEach(
                 }
                 display.textContent += numEvent.target.textContent
                 if (!operator) {
+                    num2 = undefined
                     num1 = Number(display.textContent)
                     console.log('Num1 = ' + num1)
                 }
@@ -89,4 +90,5 @@ function equalClick() {
         display.textContent = 'Error'
 
     console.log(ans)
+    operator = undefined
 }
