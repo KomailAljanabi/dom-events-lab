@@ -47,7 +47,7 @@ operators.forEach(
     function (opSelected) {
         opSelected.addEventListener('click',
             function (OpEvent) {
-                if (!num2) {
+                if (!num2 && num1) {
                     display.textContent = OpEvent.target.textContent
                     operator = display.textContent
                     console.log('Operator = ' + operator)
