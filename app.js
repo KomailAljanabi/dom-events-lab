@@ -19,7 +19,7 @@ equals.addEventListener('click', equalClick)
 /*-------------------------------- Functions --------------------------------*/
 
 numbers.forEach(
-    function (num) {
+    function (numSelected) {
         num.addEventListener('click',
             function (numEvent) {
                 if (display.textContent === '+' || display.textContent === '-' ||
@@ -27,6 +27,7 @@ numbers.forEach(
                     display.textContent === 'Error' || equalClicked) {
                     display.textContent = ''
                     equalClicked = false
+                    operator = undefined
                 }
                 display.textContent += numEvent.target.textContent
                 if (!operator) {
@@ -90,5 +91,5 @@ function equalClick() {
         display.textContent = 'Error'
 
     console.log(ans)
-    operator = undefined
+    
 }
