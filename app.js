@@ -27,7 +27,6 @@ numbers.forEach(
                     display.textContent === 'Error' || equalClicked) {
                     display.textContent = ''
                     equalClicked = false
-                    operator = undefined
                 }
                 display.textContent += numEvent.target.textContent
                 if (!operator) {
@@ -91,5 +90,5 @@ function equalClick() {
         display.textContent = 'Error'
 
     console.log(ans)
-    
+    operator = undefined
 }
