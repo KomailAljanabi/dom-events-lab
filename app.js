@@ -5,7 +5,7 @@ const equals = document.querySelector('.equals')
 const reset = document.querySelector('.reset')
 /*-------------------------------- Variables --------------------------------*/
 let display = document.querySelector('.display')
-let num1, num2, ans, operator
+let num1, num2, ans, operator, equalClicked = false
 /*------------------------ Cached Element References ------------------------*/
 console.log(numbers)
 console.log(operators)
@@ -24,8 +24,9 @@ numbers.forEach(
             function (numEvent) {
                 if (display.textContent === '+' || display.textContent === '-' || 
                     display.textContent === '*' || display.textContent === '/' || 
-                    display.textContent === 'Error') {
+                    display.textContent === 'Error' || equalClicked) {
                     display.textContent = ''
+                    equalClicked = false
                 }
                 display.textContent += numEvent.target.textContent
                 if (!operator) {
@@ -45,10 +46,11 @@ operators.forEach(
     function (opSelected) {
         opSelected.addEventListener('click',
             function (OpEvent) {
+                if(!num2){
                 display.textContent = OpEvent.target.textContent
                 operator = display.textContent
                 console.log('Operator = ' + operator)
-            }
+            }}
         )
     }
 )
@@ -62,6 +64,7 @@ function CClick() {
     console.log('Resetted')
 }
 function equalClick() {
+    equalClicked = true
     if (num1 && num2 && operator) {
         if (operator === '+') {
             ans = num1 + num2
@@ -82,5 +85,6 @@ function equalClick() {
     }
     else
         display.textContent = 'Error'
+    
     console.log(ans)
 }
