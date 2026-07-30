@@ -22,8 +22,8 @@ numbers.forEach(
     function (num) {
         num.addEventListener('click',
             function (numEvent) {
-                if (display.textContent === '+' || display.textContent === '-' || 
-                    display.textContent === '*' || display.textContent === '/' || 
+                if (display.textContent === '+' || display.textContent === '-' ||
+                    display.textContent === '*' || display.textContent === '/' ||
                     display.textContent === 'Error' || equalClicked) {
                     display.textContent = ''
                     equalClicked = false
@@ -46,11 +46,12 @@ operators.forEach(
     function (opSelected) {
         opSelected.addEventListener('click',
             function (OpEvent) {
-                if(!num2){
-                display.textContent = OpEvent.target.textContent
-                operator = display.textContent
-                console.log('Operator = ' + operator)
-            }}
+                if (!num2) {
+                    display.textContent = OpEvent.target.textContent
+                    operator = display.textContent
+                    console.log('Operator = ' + operator)
+                }
+            }
         )
     }
 )
@@ -60,6 +61,7 @@ function CClick() {
     num2 = undefined
     ans = undefined
     operator = undefined
+    equalClicked = false
     display.textContent = ''
     console.log('Resetted')
 }
@@ -85,6 +87,6 @@ function equalClick() {
     }
     else
         display.textContent = 'Error'
-    
+
     console.log(ans)
 }
